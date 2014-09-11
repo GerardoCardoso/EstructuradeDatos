@@ -1,0 +1,61 @@
+#include <stdio.h>
+#include <conio.h>
+#define TAM 100
+
+//Ejercicio #1 Estructura de Datos
+main()
+{
+
+
+int res;
+do{
+int i=0, n=0, x[TAM], P=0, I=0, ap=0, ai=0;
+clrscr();
+printf("Bienvenido a este programa de Arreglos");
+printf("\n\n1) Se tiene un arreglo de ´N´ elementos; que tiene almacenados"
+" números enteros \n positivos (Pares e Impares), se desea saber:\n"
+"\n+ La cantidad de números pares"
+"\n+ La cantidad de números impares"
+"\n+ La suma de los números pares"
+"\n+ La suma de los números impares\n");
+printf("\nPresione Enter para continuar");
+getch();
+clrscr(); //Limpia la pantalla
+
+do{
+printf("\n¿Cuantos números serán introducidos?  ");
+scanf("%d", &n);
+printf("\n");
+	for  (i+=0; i<n; i++){
+	printf("\nDame los numeros de tu arreglo %d  ", i);
+	scanf("%d", &x[i]);
+		if (x[i]<0)  {
+	printf("Solo Acepto Números Positivos, Favor de Leer la instrucción");
+   getch();
+   return 0;
+
+   }
+			if( x[i]%2 == 0)
+   		{
+			P=P+x[i];
+      	ap=ap+1;
+       	}
+ 				else
+         	{
+        	 	I=I+x[i];
+         	ai=ai+1;
+        		}
+}
+}while (i<n);
+printf("\nSuma de Números Pares es: %d", P);
+printf("\nSuma de Números Impares es: %d", I);
+printf("\nCantidad de Números Pares es: %d", ap);
+printf("\nCantidad de Números Impares es: %d", ai);
+
+printf("\n\nDesea Reiniciar el Proceso 1=si; 2=no");
+   scanf("%i", &res);
+   fflush( stdin );
+
+getch();
+}while (res !=1);
+}
